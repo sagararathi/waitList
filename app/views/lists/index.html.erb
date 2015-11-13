@@ -1,0 +1,36 @@
+<div class="container list_form">
+    <div class="row">
+<div class="col-sm-6 col-sm-offset-3">
+<%= render "form" %>
+</div><br>
+<hr>
+<br>
+
+<% if @lists %>
+<table class="table">
+  <tr class='active'>
+  <th>Name</th>
+  <th>Mobile</th>
+  <th>Status</th>
+  <th>Message</th>
+  <th></th>
+  <th></th>
+  </tr>
+
+  <% @lists.each do |list|  %>
+  <tr>
+
+      <th><%= list.name  %></th>
+       <th><%= list.mobile  %></th>
+        <th><%= list.status  %></th>
+        <th><%= list.message  %></th>
+        <th><%= link_to "Edit", edit_list_path(list) %> | <%= link_to "SMS", sms_path(list.id), method: :put %> | <%= link_to 'Delete', list_path(list), method: :delete, data: { confirm: 'Are you sure?' }  %><th>
+
+    </tr>
+  <% end %>
+
+</table>
+<% end %>
+
+</div>
+</div>

@@ -1,0 +1,24 @@
+<div class="container">
+    <div class="row">
+<div class="col-sm-5 col-sm-offset-4">
+<h1>Signup Form</h1>
+</div>
+<br>
+<div class="col-sm-6 col-sm-offset-5">
+ <%= form_for :user, url: users_path do |f| %>
+    <%= f.label(:firstname, 'Firstname') %><br>
+    <%= f.text_field :firstname, placeholder:"Jhon", :autofocus => true %><br>
+    <%= f.label(:lastname, 'Lastname') %><br>
+    <%= f.text_field :lastname,placeholder:"Bradshaw" %><br>
+    <%= f.label(:email, 'Email')  %><br>
+    <%= f.text_field :email,placeholder:"jhon@example.com" %><br>
+    <%= f.label(:password, 'Password')  %><br>
+    <%= f.password_field :password %><br>
+    <%= f.label(:password_confirmation)  %><br>
+    <%= f.password_field :password_confirmation %><br><br>
+
+    <%= f.submit %>
+<% end %>
+</div>
+</div>
+</div>

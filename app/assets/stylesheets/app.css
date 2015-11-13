@@ -1,0 +1,36 @@
+body {
+  padding-top: 50px !important;
+}
+
+.jumbotron {
+  background: url(ee.png) no-repeat top center ;
+
+  height: 598px;
+  overflow: none;
+}
+
+ h1{
+  margin-top: 60px;
+}
+
+.em-text{
+  color:#1caa98 !important;
+
+}
+
+.logo_font{
+  font-family: 'Courgette', cursive;
+  font-size: 2em;
+}
+
+.tagline{
+  margin-top: 100px;
+}
+#login_form{
+  margin-top: 10px;
+
+}
+
+.list_form {
+  margin-top: 50px;
+}

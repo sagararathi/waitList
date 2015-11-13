@@ -1,0 +1,10 @@
+<div class="container">
+    <div class="row">
+<%= form_for :list, url: lists_path do |f|  %>
+  <%= f.text_field :name, placeholder:"Name", :autofocus => true  %>
+  <%= f.text_field :mobile  %>
+  <%= f.text_field :message, placeholder:"message"  %>
+  <%= f.submit  %>
+<% end %>
+</div>
+</div>
