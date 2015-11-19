@@ -12,3 +12,6 @@
 7. Update sender's number in application_controller.rb
 8. Type rails s
 9. Open your browser and navigate to [http://localhost:3000/](http://localhost:3000)
+ ## Things to implement
+ 1. Link to profile edit page.
+ 2. Create new migration for new cloum in user for Storing default message for sending sms to contact.
