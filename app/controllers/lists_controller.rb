@@ -1,4 +1,5 @@
 class ListsController < ApplicationController
+  before_filter :set_list, only: [:edit, :update, :destroy, :sms]
   def index
     if current_user
       @list = List.new
@@ -7,12 +8,8 @@ class ListsController < ApplicationController
       redirect_to login_path
     end
   end
-  def new
-    @list = List.new
-  end
 
   def edit
-    @list = List.find(params[:id])
   end
 
   def create
@@ -23,21 +20,17 @@ class ListsController < ApplicationController
   end
 
   def update
-    list = List.find(params[:id])
-    if list.update(list_params)
+    if @list.update(list_params)
       redirect_to lists_path
     end
   end
 
   def destroy
-    list = List.find_by(id: params[:id])
-    list.destroy
-
+    @list.destroy
     redirect_to lists_path
   end
 
   def sms
-    @list = List.find(params[:id])
     message = "#{@list.name}  #{@list.message}"
     send_notification(message, @list.mobile)
     @list.status = true
@@ -49,5 +42,8 @@ class ListsController < ApplicationController
   private
   def list_params
     params.require(:list).permit(:id,:name, :mobile, :message, :status).merge(user_id: current_user.id)
+  end
+  def set_list
+    @list = List.find_by(id: params[:id])
   end
 end

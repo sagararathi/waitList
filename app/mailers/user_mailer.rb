@@ -1,5 +1,4 @@
 class UserMailer < ApplicationMailer
-
   default from: 'waitlist3@gmail.com'
 
   def welcome_email(user)

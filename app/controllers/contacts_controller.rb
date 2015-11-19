@@ -1,7 +1,6 @@
 class ContactsController < ApplicationController
   def new
     @contact = Contact.new
-    render :new
   end
 
   def create
@@ -10,7 +9,6 @@ class ContactsController < ApplicationController
     if @contact.deliver
       redirect_to root_path
     else
-
       render :new
     end
   end
